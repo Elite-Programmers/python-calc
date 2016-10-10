@@ -1,28 +1,21 @@
-def add():
-    a=float(input("Enter a number : "))
-    b=float(input("Enter 2nd number : "))
+def add(a,b):
+    
     c=str(a+b)
     return c
 
-def sub():
-    a=float(input("Enter a number : "))
-    b=float(input("Enter 2nd number : "))
+def sub(a,b):
     c=str(a-b)
     return c
 
-def mul():
-    a=float(input("Enter a number : "))
-    b=float(input("Enter 2nd number : "))
+def mul(a,b):
     c=str(a*b)
     return c
-def div():
+def div(a,b):
     try:
-        a=float(input("Enter a number : "))
-        b=float(input("Enter 2nd number : "))
         c=str(a/b)
         return c
     except ZeroDivisionError:
-        return("Invalid Input")
+        return("∞")
     #finally:
     #   print("\nTry again with different value")
     
@@ -36,22 +29,21 @@ def loop():
         print("Enter 'div' to divide two numbers")
         print("Enter 'quit' to quit")
         usr_inp=input("--")
-        
         if usr_inp == "quit":
             break
-        elif usr_inp == "add":
-            z=add()
-            print("Sum  is : "+z)
+        a=float(input("Enter a number : "))
+        b=float(input("Enter 2nd number : "))
+        
+        if usr_inp == "add":
+            z=add(a,b)
         elif usr_inp == "sub":
-            z=sub()
-            print("Subtraction  is : "+z)
+            z=sub(a,b)
         elif usr_inp == "mul":
-            z=mul()
-            print("Multiplication  is : "+z)
+            z=mul(a,b)
         elif usr_inp == "div":
-            z=div()
-            print("Division  is : "+z)
+            z=div(a,b)
         else:
             print("Invalid choice")
+        print("Answer is :"+z)
             
 loop()
