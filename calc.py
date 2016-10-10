@@ -1,4 +1,34 @@
-while True:
+def add():
+    a=float(input("Enter a number : "))
+    b=float(input("Enter 2nd number : "))
+    c=str(a+b)
+    return c
+
+def sub():
+    a=float(input("Enter a number : "))
+    b=float(input("Enter 2nd number : "))
+    c=str(a-b)
+    return c
+
+def mul():
+    a=float(input("Enter a number : "))
+    b=float(input("Enter 2nd number : "))
+    c=str(a*b)
+    return c
+def div():
+    try:
+        a=float(input("Enter a number : "))
+        b=float(input("Enter 2nd number : "))
+        c=str(a/b)
+        return c
+    except ZeroDivisionError:
+        return("Invalid Input")
+    #finally:
+    #   print("\nTry again with different value")
+    
+
+def loop():
+    while True:
         print("\nOptions : ")
         print("Enter 'add' to add two numbers")
         print("Enter 'sub' to subtract two numbers")
@@ -10,24 +40,18 @@ while True:
         if usr_inp == "quit":
             break
         elif usr_inp == "add":
-            a=float(input("Enter a number : "))
-            b=float(input("Enter 2nd number : "))
-            c=str(a+b);
-            print("Sum  is : "+c)
+            z=add()
+            print("Sum  is : "+z)
         elif usr_inp == "sub":
-            a=float(input("Enter a number : "))
-            b=float(input("Enter 2nd number : "))
-            c=str(a-b);
-            print("Subtraction  is : "+c)
+            z=sub()
+            print("Subtraction  is : "+z)
         elif usr_inp == "mul":
-            a=float(input("Enter a number : "))
-            b=float(input("Enter 2nd number : "))
-            c=str(a*b);
-            print("Multiplication  is : "+c)
+            z=mul()
+            print("Multiplication  is : "+z)
         elif usr_inp == "div":
-            a=float(input("Enter a number : "))
-            b=float(input("Enter 2nd number : "))
-            c=str(a/b);
-            print("Division  is : "+c)
+            z=div()
+            print("Division  is : "+z)
         else:
             print("Invalid choice")
+            
+loop()
