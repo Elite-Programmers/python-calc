@@ -1,5 +1,4 @@
 def add(a,b):
-    
     c=str(a+b)
     return c
 
@@ -18,7 +17,7 @@ def div(a,b):
         return("∞")
     #finally:
     #   print("\nTry again with different value")
-    
+
 
 def loop():
     while True:
@@ -31,9 +30,12 @@ def loop():
         usr_inp=input("--")
         if usr_inp == "quit":
             break
-        a=float(input("Enter a number : "))
-        b=float(input("Enter 2nd number : "))
-        
+        try :
+            a=float(input("Enter a number : "))
+            b=float(input("Enter 2nd number : "))
+        except ValueError:
+            print("Wrong entry")
+            continue
         if usr_inp == "add":
             z=add(a,b)
         elif usr_inp == "sub":
@@ -45,5 +47,5 @@ def loop():
         else:
             print("Invalid choice")
         print("Answer is :"+z)
-            
+
 loop()
